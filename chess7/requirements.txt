@@ -1,5 +1,5 @@
 Django
 gunicorn
 stripe
-django-crispy-forms
+django-crispy-forms==1.14.0
 psycopg2
