@@ -1,0 +1,70 @@
+{% extends "testimonials/base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+        .testimonial-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .testimonial-image {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .testimonial-text {
+            flex: 1;
+        }
+        
+        .testimonial-title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonials {
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
+    </style>
+
+	<img class="center-fit" src="{% static '/images/groupchess1.jpeg' %}" alt="At competition">
+    
+    <br><br>
+    <h3>Testimonials</h3> <br>
+    <div class="testimonials">
+    	<legend><h7>{{ name1 }}</h7></legend>
+    	<h7><em>{{ review1 }}</em></h7>
+	</div>
+	<div class="testimonials">
+    	<legend><h7>{{ name2 }}</h7></legend>
+    	<h7><em>{{ review2 }}</em></h7>
+	</div>
+	<div class="testimonials">
+    	<legend><h7>{{ name3 }}</h7></legend>
+    	<h7><em>{{ review3 }}</em></h7>
+	</div>
+	<div class="testimonials">
+    	<legend><h7>{{ name4 }}</h7></legend>
+    	<h7><em>{{ review4 }}</em></h7>
+	</div>
+	<div class="testimonials">
+    	<legend><h7>{{ name5 }}</h7></legend>
+    	<h7><em>{{ review5 }}</em></h7>
+	</div>
+	<div class="testimonials">
+    	<legend><h7>{{ name6 }}</h7></legend>
+    	<h7><em>{{ review6 }}</em></h7>
+	</div>
+{% endblock content %}

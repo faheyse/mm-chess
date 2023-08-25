@@ -1,0 +1,5 @@
+Django
+gunicorn
+stripe
+django-crispy-forms
+psycopg2

@@ -1,0 +1,49 @@
+{% extends "testimonials/base.html" %}
+{% load static %}
+
+{% block content %}
+    <title>About Page</title>
+    <style>
+        .about-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .about-image {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .services {
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+
+    </style>
+
+    <div class="about-container">
+        <img src="{% static '/images/moi_chess.jpeg' %}" alt="At competition" class="about-image" width="250" height="250">
+        <div class="about-text">
+            <div class="about-title">About</div>
+            <p class="services">
+                The Manojlovic Chess School was founded in 2017, by Mihailo Manojlovic who has represented Ireland internationally on numerous occasions.<br><br>
+                Services include:
+                <br><br>Private coaching: Online or in person private coaching. This can be one-to-one or in a group.
+                <br><br>Primary after school chess club: teaching large groups of children in primary schools.
+            </p>
+        </div>
+    </div>
+{% endblock content %}
