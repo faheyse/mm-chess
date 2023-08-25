@@ -69,10 +69,10 @@ def SignupView(request):
             form.save()
 
             price = Price.objects.get(pk=1)#id=kwargs["pk"])
-            domain = "https://mm-chess.com"
+            domain = "https://yourdomain.com"
 
-            if settings.DEBUG == False:
-                domain = "http://0.0.0.0:8000"
+            if settings.DEBUG:
+                domain = "http://127.0.0.1:8000"
             checkout_session = stripe.checkout.Session.create(
                 payment_method_types=['card'],
                 line_items=[

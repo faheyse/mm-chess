@@ -1,5 +1,4 @@
-Django
-gunicorn
-stripe
-django-crispy-forms==1.14.0
-psycopg2
+Django==3.2
+gunicorn==20.1.0
+stripe==2.56.0
+django-crispy-forms==1.12.0
