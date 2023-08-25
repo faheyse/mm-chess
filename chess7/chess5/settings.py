@@ -16,6 +16,9 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
+print("\n\n\n\n\n\n\n\n\n\n\n\n\n")
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +30,7 @@ SECRET_KEY = 'django-insecure-h!#_0nk!kpccq_xs9w4rf$4g1s&c&2d=7dm88sa=ek1f768z0f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Default email setup
 DEFAULT_FROM_EMAIL = "manojlovic.mihailo@gmail.com"
