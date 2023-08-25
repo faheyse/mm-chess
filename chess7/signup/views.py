@@ -72,7 +72,7 @@ def SignupView(request):
             domain = "https://mm-chess.com"
 
             if settings.DEBUG == False:
-                domain = "http://127.0.0.1:8000"
+                domain = "http://0.0.0.0:8000"
             checkout_session = stripe.checkout.Session.create(
                 payment_method_types=['card'],
                 line_items=[
