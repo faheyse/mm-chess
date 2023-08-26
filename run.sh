@@ -1,9 +1,9 @@
 #!/bin/bash
-sudo cp ./id_rsa ~/.ssh/
+
 sudo apt -y install python3
 sudo cp /bin/python3 /bin/python
 pip install psycopg2-binary
-sudo apt install -y git nginx
+sudo apt install -y nginx
 
 git config --global user.email "seanfahey10@gmail.com"
 git config --global user.name "Sean Fahey"
