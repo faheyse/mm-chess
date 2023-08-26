@@ -14,11 +14,12 @@ cd ~/mm-chess/chess7
 pip3 install -r requirements.txt
 
 # Run Gunicorn to serve your Django application in detached mode
-gunicorn chess5.wsgi:application --bind 0.0.0.0:8000 --daemon
-
+#gunicorn chess5.wsgi:application --bind 127.0.0.1:8000 --daemon
+python manage.py runserver 127.0.0.1:8000
 # Place the Nginx configuration file in the sites-available directory
 # Replace 'your_nginx_config' with the actual path to your Nginx config file
-sudo mv ~/mm-chess/chess7/nginx.conf /etc/nginx/sites-available/mm-chess.conf
+sudo rm /etc/nginx/sites-enabled/mm-chess.conf
+sudo cp ~/mm-chess/mm-chess.conf /etc/nginx/sites-available/mm-chess.conf
 
 # Create a symbolic link to enable the site
 sudo ln -s /etc/nginx/sites-available/mm-chess.conf /etc/nginx/sites-enabled/
