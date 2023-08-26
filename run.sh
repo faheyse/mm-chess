@@ -1,44 +1,50 @@
 #!/bin/bash
 
-sudo apt -y install python3
-sudo cp /bin/python3 /bin/python
-sudo apt install -y pip
-pip install psycopg2-binary
-sudo apt install -y nginx
+sudo apt -y update
+sudo apt -y install python3 python3-pip
+sudo apt -y install nginx
 
-#git config --global user.email "seanfahey10@gmail.com"
-#git config --global user.name "Sean Fahey"
-
-# Enable and start nginx service
-sudo systemctl enable nginx
-
-sudo systemctl start nginx
+# Start Nginx
+sudo service nginx start
 
 # Navigate to your project directory
 cd ~/mm-chess/chess7
 
-# Optionally, activate your virtual environment here
-# source your_virtual_env/bin/activate
+# Setup Python Environment
+python3 -m venv venv
+source venv/bin/activate
 
 # Install project dependencies
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
+# If you're going to use PostgreSQL
+pip install psycopg2
 
-sudo rm /etc/nginx/sites-enabled/*
-sudo rm /etc/nginx/sites-available/*
-
+# Nginx setup
+# Assuming you're appending configuration, not removing all
 sudo cp ~/mm-chess/mm-chess.conf /etc/nginx/sites-available/
 
 # Create a symbolic link to enable the site
 sudo ln -s /etc/nginx/sites-available/mm-chess.conf /etc/nginx/sites-enabled/
 
-# Test the Nginx configuration
+# Check and reload Nginx
 sudo nginx -t
+sudo service nginx reload
 
-# Restart Nginx for changes to take effect
-sudo systemctl restart nginx
+# Setup Gunicorn systemd service
+echo "[Unit]
+Description=gunicorn daemon
+After=network.target
 
-python manage.py runserver 127.0.0.1:8000
+[Service]
+User=username
+Group=groupname
+WorkingDirectory=/path/to/your/project
+ExecStart=/path/to/your/project/venv/bin/gunicorn --bind localhost:8000 chess5.wsgi:application
 
+[Install]
+WantedBy=multi-user.target" | sudo tee /etc/systemd/system/gunicorn.service
 
-sudo systemctl stop nginx
+# Start Gunicorn service
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn

@@ -69,7 +69,7 @@ def SignupView(request):
             form.save()
 
             price = Price.objects.get(pk=1)#id=kwargs["pk"])
-            domain = "https://yourdomain.com"
+            domain = "http://127.0.0.1:8000"
 
             if settings.DEBUG:
                 domain = "http://127.0.0.1:8000"
