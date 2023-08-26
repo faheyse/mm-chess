@@ -5,6 +5,7 @@ sudo apt -y update
 sudo apt -y install python3
 sudo apt -y install python3-pip
 pip3 install psycopg2-binary
+sudo apt install -y gunicorn
 
 # Install and start Nginx
 sudo apt -y install nginx
