@@ -1,5 +1,5 @@
 #!/bin/bash
-
+python stop.py
 # Install Python, pip, and PostgreSQL adapter
 sudo apt -y update
 sudo apt -y install python3
