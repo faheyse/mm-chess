@@ -24,11 +24,13 @@ sudo rm -f /etc/nginx/sites-available/*
 
 
 # Replace 'PWD' with the current directory in mm-chess.conf
+cp mm-chess.conf.template mm-chess.conf
 current_dir=$(pwd)
 sed -i "s|PWD|$current_dir|g" mm-chess.conf
 
 # Copy Nginx site configuration to available sites
 sudo cp ~/mm-chess/mm-chess.conf /etc/nginx/sites-available/
+rm ~/mm-chess/mm-chess.conf
 
 # Create a symbolic link to enable the site
 sudo ln -s /etc/nginx/sites-available/mm-chess.conf /etc/nginx/sites-enabled/
