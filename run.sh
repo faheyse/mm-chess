@@ -21,6 +21,12 @@ pip3 install -r requirements.txt
 sudo rm -f /etc/nginx/sites-enabled/*
 sudo rm -f /etc/nginx/sites-available/*
 
+
+
+# Replace 'PWD' with the current directory in mm-chess.conf
+current_dir=$(pwd)
+sed -i "s|PWD|$current_dir|g" mm-chess.conf
+
 # Copy Nginx site configuration to available sites
 sudo cp ~/mm-chess/mm-chess.conf /etc/nginx/sites-available/
 

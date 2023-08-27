@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Allow: /testimonials/
+Allow: /static/
+Allow: /media/
+Allow: /
