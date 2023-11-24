@@ -1,2 +1,2 @@
-image: faheyse/mm-chess-app:latest
-# docker push faheyse/mm-chess-app
+# The Docker image that will be used to build your app
+image: docker.io/faheyse/mm-chess-app
