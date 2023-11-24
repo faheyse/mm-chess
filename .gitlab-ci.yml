@@ -1,2 +1,17 @@
-# The Docker image that will be used to build your app
-image: docker.io/faheyse/mm-chess-app
+image: python:3.8
+
+stages:
+  - build
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Building the application"
+    - docker build -t gcr.io/mm-chess-397014/mm-chess-app:latest .
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying the application"
+    - docker push gcr.io/mm-chess-397014/mm-chess-app:latest
