@@ -2,4 +2,3 @@ Django==3.2
 stripe==2.56.0
 django-crispy-forms
 psycopg2-binary==2.8.6
-
