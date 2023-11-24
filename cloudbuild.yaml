@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-app:$SHORT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/mm-chess-397014/mm-chess-app:latest', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/my-app:$SHORT_SHA']
+  args: ['push', 'gcr.io/mm-chess-397014/mm-chess-app:latest']
 # Additional steps for deployment, like updating GKE or GCE
