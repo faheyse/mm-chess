@@ -1,0 +1,2 @@
+docker build -t faheyse/mm-chess-app:latest .
+docker push faheyse/mm-chess-app
