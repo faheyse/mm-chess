@@ -11,8 +11,6 @@ sudo apt install -y gunicorn
 sudo apt -y install nginx
 sudo service nginx start
 
-# Navigate to your project directory
-cd ~/mm-chess/chess7
 
 # Install project dependencies
 pip3 install -r requirements.txt
@@ -22,17 +20,15 @@ sudo rm -f /etc/nginx/sites-enabled/*
 sudo rm -f /etc/nginx/sites-available/*
 
 
-
+cp ~/mm-chess/mm-chess.conf ~/mm-chess/mm-chess.conf.template
 # Replace 'PWD' with the current directory in mm-chess.conf
 cd ~/mm-chess
-cp mm-chess.conf.template mm-chess.conf
 current_dir=$(pwd)
 sed -i "s|PWD|$current_dir|g" mm-chess.conf
 
 # Copy Nginx site configuration to available sites
 sudo cp ~/mm-chess/mm-chess.conf /etc/nginx/sites-available/
-rm ~/mm-chess/mm-chess.conf
-
+mv ~/mm-chess/mm-chess.conf.template ~/mm-chess/mm-chess.conf
 cd ~/mm-chess/chess7
 
 # Create a symbolic link to enable the site
